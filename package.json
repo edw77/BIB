@@ -1,0 +1,13 @@
+{
+  "name": "app_zone",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron-packager . --overwrite --icon=icon.ico"
+  },
+  "devDependencies": {
+    "electron-builder": "^22.7.0",
+    "electron-packager": "^14.2.1",
+    "node": "^14.4.0"
+  }
+}
