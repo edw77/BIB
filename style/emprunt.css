@@ -1,0 +1,16 @@
+body
+{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+  color: #000;
+  width: 854px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+  padding: 0 24px 20px 20px;
+  background: #C5A498;
+  }
+#ok
+{ color: #FFF;
+  width: 60px;
+  height: 25px;
+  padding: 0;
+  background: #362215;
+  }
