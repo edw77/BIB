@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Ajouter</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="../style/style.css" title="style" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+         <h1><a href="../index.html"><span class="logo_colour"> BIB</span></a></h1>
+          <h2>Des livres, des livres, et encore des livres</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="liste.html">Liste</a></li>
+          <li><a href="page.html">Emprunts/Restitutions</a></li>
+          <li class="selected"><a href="another_page.html">Ajouter</a></li>
+          <li><a onclick='win.close()'>Quitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <p id="site_content">
+        <label for="start">Ajout de livre</label><br>
+        <label for="start">Titre</label><br>
+        <label for="start"></label><input type = "text" id="titre" value="" ><br>
+        <label for="start">Auteur</label><br>
+        <label for="start"></label><input type = "text" id="auteur" value="" ><br>
+        <label for="start">Genre</label><br>
+        <label for="start"></label><input type = "text" id="genre" value=""><br>
+        <label for="start">Année</label><br>
+        <label for="start"></label><input type = "text" id="annee" value=""><br>
+        <label for="start">Photo de couverture</label><br>
+        <input type="file" id="cover">
+        <br /><br />
+        <button id="ok" class="btn draw-border" onclick="confirmer()" > Enregistrer </button>
+          <button id="rst" class="btn draw-border" onclick="reset()" > Réinitialiser </button>
+
+    </p>
+    <div id="footer">
+      Copyright &copy; black_white | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Free CSS Templates</a>
+    </div>
+  </div>
+  <script src="../scripts/ajout.js">
+</script>
+</body>
+</html>

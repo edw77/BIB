@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Prompt Dialog</title>
+<link rel="stylesheet" type="text/css" href="../style/emprunt.css" />
+</head>
+<body>
+<p id="label"></p>
+<p>
+<label for="start">Nom et prénom :</label><input type = "text" id="data" value="" placeholder="entrez ici"><br>
+<label for="start">Date retour officiel</label>
+<input type="date" id="data2" name="data2" value="" min=""><br>
+<input type = "button" id="ok" value="OK" onclick="response()">
+<input type = "button" id="ok" value="Cancel" onclick="cancel()">
+
+</p>
+
+<script>
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+var dretour = document.getElementById("start2");
+today = dd + '/' + mm + '/' + yyyy;
+
+
+const { ipcRenderer } = require("electron")
+function cancel() {
+    ipcRenderer.send("closeDialog", "")
+	this.close();
+}
+function response() {
+    ipcRenderer.send("closeDialog", document.getElementById("data").value + "," + document.getElementById("data2").value.replace(/-/g, "/"))
+	this.close();
+}
+window.onload=function() {
+    var options = ipcRenderer.sendSync("openDialog", "")
+    var params = JSON.parse(options)
+    document.getElementById("label").innerHTML = params.label;
+    document.getElementById("data").value = params.value;
+    document.getElementById("ok").value = params.ok;
+    dretour.value = today;
+    dretour.min = today;
+}
+
+</script>
+</body>
+</html>
